@@ -1,0 +1,47 @@
+services:
+  wip-pages-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: wip-pages-dev
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      default:
+        aliases:
+          - frontend
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - CI=true
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    command: pnpm dev --host 0.0.0.0 --port 5173
+
+  # ── CLOUDFLARE QUICK TUNNELS (FOR MOBILE TESTING) ───────────────────────
+  cloudflared:
+    image: docker.io/cloudflare/cloudflared:latest
+    container_name: wip-pages-tunnel-dev
+    restart: unless-stopped
+    command: tunnel run
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
+    env_file:
+      - .env
+    depends_on:
+      - wip-pages-dev
+    deploy:
+      resources:
+        limits:
+          cpus: '0.2'
+          memory: 128M
+        reservations:
+          cpus: '0.05'
+          memory: 32M

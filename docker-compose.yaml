@@ -1,0 +1,34 @@
+services:
+  wip-pages:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wip-pages-prod
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    security_opt:
+      - no-new-privileges:true
+
+  # ── CLOUDFLARE QUICK TUNNELS (FOR MOBILE TESTING / PROD) ────────────────
+  cloudflared:
+    image: docker.io/cloudflare/cloudflared:latest
+    container_name: wip-pages-tunnel-prod
+    restart: unless-stopped
+    command: tunnel run
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
+    env_file:
+      - .env
+    depends_on:
+      - wip-pages
+    deploy:
+      resources:
+        limits:
+          cpus: '0.2'
+          memory: 128M
+        reservations:
+          cpus: '0.05'
+          memory: 32M

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Under Maintenance</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="placeholder-page">
+    <div class="illustration-frame" aria-hidden="true">
+      <svg
+        id="wrench-svg"
+        viewBox="0 0 400 300"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <!-- Mechanical Mounting Plate -->
+        <rect
+          x="64"
+          y="42"
+          width="272"
+          height="216"
+          rx="12"
+          fill="#ebe9e2"
+          stroke="#1a1917"
+          stroke-width="1.5"
+        />
+        <!-- Corner Fastener Rivets -->
+        <circle cx="82" cy="60" r="3.5" fill="#f6f5f0" stroke="#1a1917" stroke-width="1.3" />
+        <circle cx="318" cy="60" r="3.5" fill="#f6f5f0" stroke="#1a1917" stroke-width="1.3" />
+        <circle cx="82" cy="240" r="3.5" fill="#f6f5f0" stroke="#1a1917" stroke-width="1.3" />
+        <circle cx="318" cy="240" r="3.5" fill="#f6f5f0" stroke="#1a1917" stroke-width="1.3" />
+
+        <!-- Center Assembly (Tilted -25deg so handle sits naturally at bottom-right) -->
+        <g transform="translate(178, 146) rotate(-25)">
+          <!-- Circular Washer Base -->
+          <circle cx="0" cy="0" r="52" fill="#f6f5f0" stroke="#1a1917" stroke-width="1.5" />
+          <circle cx="0" cy="0" r="42" stroke="#b8b5ab" stroke-width="1" stroke-dasharray="4 4" />
+
+          <!-- Rotation Direction Arc Indicator -->
+          <path
+            id="torque-arc"
+            d="M -28 -56 A 62 62 0 0 1 32 -53"
+            stroke="#78766f"
+            stroke-width="1.3"
+            stroke-linecap="round"
+          />
+          <polyline
+            points="27,-58 33,-53 26,-49"
+            stroke="#78766f"
+            stroke-width="1.3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+
+          <!-- HEXAGONAL NUT & THREADED BOLT -->
+          <g id="hex-nut">
+            <!-- 6-Sided Regular Hexagon (Flats at y = -26 and y = +26) -->
+            <polygon
+              points="-15,-26 15,-26 30,0 15,26 -15,26 -30,0"
+              fill="#dfddd4"
+              stroke="#1a1917"
+              stroke-width="1.75"
+              stroke-linejoin="round"
+            />
+            <!-- Chamfer Circle Inside Hex Nut -->
+            <circle cx="0" cy="0" r="21" stroke="#78766f" stroke-width="1.1" />
+            <!-- Central Bolt Shaft -->
+            <circle cx="0" cy="0" r="12" fill="#f6f5f0" stroke="#1a1917" stroke-width="1.5" />
+            <!-- Slot / Index Mark on Bolt so rotation is visibly unmistakable -->
+            <line x1="-7" y1="0" x2="7" y2="0" stroke="#1a1917" stroke-width="1.75" stroke-linecap="round" />
+          </g>
+
+          <!-- OPEN-END ENGINEER'S WRENCH -->
+          <g id="wrench-pivot">
+            <g id="wrench-slide">
+              <!-- Wrench Silhouette (Jaws hug y = -26.5 and y = 26.5) -->
+              <path
+                d="M -14 -26.5
+                   L 15 -26.5
+                   C 23 -26.5, 27 -18, 27 0
+                   C 27 18, 23 26.5, 15 26.5
+                   L -14 26.5
+                   C -16 34, -4 45, 14 45
+                   C 30 45, 44 26, 58 14
+                   L 158 13
+                   C 168 13, 176 7, 176 0
+                   C 176 -7, 168 -13, 158 -13
+                   L 58 -14
+                   C 44 -26, 30 -45, 14 -45
+                   C -4 -45, -16 -34, -14 -26.5 Z"
+                fill="#f6f5f0"
+                stroke="#1a1917"
+                stroke-width="1.75"
+                stroke-linejoin="round"
+              />
+              <!-- Recessed Grip Panel on Wrench Handle -->
+              <rect
+                x="68"
+                y="-5"
+                width="68"
+                height="10"
+                rx="5"
+                fill="#ebe9e2"
+                stroke="#1a1917"
+                stroke-width="1.2"
+              />
+              <!-- Hanging Hole at End of Wrench Handle -->
+              <circle cx="158" cy="0" r="5" fill="#ebe9e2" stroke="#1a1917" stroke-width="1.4" />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <div class="copy-block">
+      <h1 class="title">Under maintenance.</h1>
+      <p class="subtitle">We are making improvements and will be back shortly.</p>
+    </div>
+  </main>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

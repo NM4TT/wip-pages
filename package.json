@@ -1,0 +1,19 @@
+{
+  "name": "wip-pages",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Centralized collection of animated pre-launch, maintenance, and coming-soon page concepts",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:page": "node scripts/build-page.js",
+    "preview": "vite preview --port 8080 --host 0.0.0.0"
+  },
+  "dependencies": {
+    "gsap": "^3.12.7"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}

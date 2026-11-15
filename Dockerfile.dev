@@ -1,0 +1,21 @@
+FROM docker.io/library/node:22-alpine
+
+WORKDIR /app
+
+# Enable pnpm via corepack
+RUN corepack enable && corepack prepare pnpm@10.5.2 --activate
+
+ENV CI=true
+
+# Copy dependency manifests and workspace configuration
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml* .npmrc* ./
+
+# Install dependencies
+RUN pnpm install
+
+# Copy remaining source code
+COPY . .
+
+EXPOSE 5173
+
+CMD ["pnpm", "dev", "--host", "0.0.0.0", "--port", "5173"]

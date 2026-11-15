@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>wip-pages — Website Placeholder Collection</title>
+  <link rel="stylesheet" href="/src/gallery/style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Header -->
+    <header class="gallery-header">
+      <div class="brand-group">
+        <h1 class="repo-title">wip-pages</h1>
+        <p class="repo-subtitle">Minimalist animated placeholder pages for websites in progress</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <nav class="filter-tabs" aria-label="Filter placeholders by category">
+        <button type="button" class="filter-tab active" data-filter="all">All (3)</button>
+        <button type="button" class="filter-tab" data-filter="pre-launch">Pre-Launch</button>
+        <button type="button" class="filter-tab" data-filter="maintenance">Maintenance</button>
+        <button type="button" class="filter-tab" data-filter="coming-soon">Coming Soon</button>
+      </nav>
+    </header>
+
+    <!-- Stage Viewer -->
+    <section class="stage-inspector" id="stage-inspector" aria-label="Live Preview">
+      <div class="inspector-toolbar">
+        <div class="inspector-meta">
+          <span class="inspector-badge" id="active-badge">PRE-LAUNCH</span>
+          <h2 class="inspector-title" id="active-title">Split-Flap Countdown</h2>
+          <span class="inspector-desc" id="active-desc">4-module mechanical split-flap countdown (DAYS : HRS : MIN : SEC)</span>
+        </div>
+
+        <div class="inspector-controls">
+          <div class="viewport-switcher" role="group" aria-label="Responsive viewport size">
+            <button type="button" class="vp-btn active" data-vp="100%" title="Full Width">
+              Desktop
+            </button>
+            <button type="button" class="vp-btn" data-vp="768px" title="Tablet (768px)">
+              Tablet
+            </button>
+            <button type="button" class="vp-btn" data-vp="390px" title="Mobile (390px)">
+              Mobile
+            </button>
+          </div>
+
+          <a
+            id="open-standalone-link"
+            href="/src/pages/pre-launch/split-flap/index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="standalone-btn"
+          >
+            Open Standalone ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="iframe-stage-container">
+        <div class="iframe-viewport-frame" id="iframe-viewport-frame">
+          <iframe
+            id="stage-iframe"
+            src="/src/pages/pre-launch/split-flap/index.html"
+            title="Live placeholder preview"
+            loading="eager"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collection Grid -->
+    <section class="collection-section" aria-label="Placeholder Collection">
+      <div class="section-heading-row">
+        <h2 class="section-heading">Pages</h2>
+        <span class="section-hint">Select a page to preview above or open standalone</span>
+      </div>
+
+      <div class="concept-grid" id="concept-grid">
+        <!-- Card 1: Pre-Launch -->
+        <article
+          class="concept-card active"
+          data-category="pre-launch"
+          data-url="/src/pages/pre-launch/split-flap/index.html"
+          data-badge="PRE-LAUNCH"
+          data-title="Split-Flap Countdown"
+          data-desc="4-module mechanical split-flap countdown (DAYS : HRS : MIN : SEC)"
+        >
+          <div class="card-preview-window">
+            <iframe
+              src="/src/pages/pre-launch/split-flap/index.html"
+              title="Pre-Launch Split-Flap preview"
+              tabindex="-1"
+              loading="lazy"
+            ></iframe>
+            <div class="card-preview-overlay">
+              <span class="overlay-action">Preview in Stage</span>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="card-top-meta">
+              <span class="cat-label">Pre-Launch</span>
+              <span class="path-tag">pre-launch/split-flap</span>
+            </div>
+            <h3 class="card-title">Split-Flap Countdown</h3>
+            <p class="card-description">
+              A 4-module physical split-flap board (DAYS, HRS, MIN, SEC) counting down in real time to a configurable launch date.
+            </p>
+            <div class="card-footer">
+              <button type="button" class="select-concept-btn">Load Preview</button>
+              <a href="/src/pages/pre-launch/split-flap/index.html" target="_blank" rel="noopener noreferrer" class="card-ext-link">
+                Standalone ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Maintenance -->
+        <article
+          class="concept-card"
+          data-category="maintenance"
+          data-url="/src/pages/maintenance/wrench/index.html"
+          data-badge="MAINTENANCE"
+          data-title="Wrench & Bolt"
+          data-desc="Open-end wrench gripping, tightening, and ratcheting a hex bolt"
+        >
+          <div class="card-preview-window">
+            <iframe
+              src="/src/pages/maintenance/wrench/index.html"
+              title="Maintenance Wrench preview"
+              tabindex="-1"
+              loading="lazy"
+            ></iframe>
+            <div class="card-preview-overlay">
+              <span class="overlay-action">Preview in Stage</span>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="card-top-meta">
+              <span class="cat-label">Maintenance</span>
+              <span class="path-tag">maintenance/wrench</span>
+            </div>
+            <h3 class="card-title">Wrench &amp; Bolt</h3>
+            <p class="card-description">
+              An open-end engineer's wrench engaging a hexagonal bolt, turning it 60° per stroke, repositioning, and tightening again.
+            </p>
+            <div class="card-footer">
+              <button type="button" class="select-concept-btn">Load Preview</button>
+              <a href="/src/pages/maintenance/wrench/index.html" target="_blank" rel="noopener noreferrer" class="card-ext-link">
+                Standalone ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Coming Soon -->
+        <article
+          class="concept-card"
+          data-category="coming-soon"
+          data-url="/src/pages/coming-soon/wireframe/index.html"
+          data-badge="COMING SOON"
+          data-title="Wireframe Builder"
+          data-desc="Browser window assembling a webpage layout step by step"
+        >
+          <div class="card-preview-window">
+            <iframe
+              src="/src/pages/coming-soon/wireframe/index.html"
+              title="Coming Soon Wireframe preview"
+              tabindex="-1"
+              loading="lazy"
+            ></iframe>
+            <div class="card-preview-overlay">
+              <span class="overlay-action">Preview in Stage</span>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="card-top-meta">
+              <span class="cat-label">Coming Soon</span>
+              <span class="path-tag">coming-soon/wireframe</span>
+            </div>
+            <h3 class="card-title">Wireframe Builder</h3>
+            <p class="card-description">
+              Inside a browser window, a pointer places the navigation bar, hero section, and feature cards of a new website step by step.
+            </p>
+            <div class="card-footer">
+              <button type="button" class="select-concept-btn">Load Preview</button>
+              <a href="/src/pages/coming-soon/wireframe/index.html" target="_blank" rel="noopener noreferrer" class="card-ext-link">
+                Standalone ↗
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="/src/gallery/main.js"></script>
+</body>
+</html>
